@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Parallax Scrolling Website | Vanilla JavaScript</title>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+<body>
+    <header>
+        <a href='#' class='logo'>Yuna</a>
+        <ul>
+            <li><a href='#' class='active'>Home</a></li>
+            <li><a href='#'>About</a></li>
+            <li><a href='#'>Work</a></li>
+            <li><a href='#'>Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="stars.png" id="stars">
+        <img src="moon.png" id="moon">
+        <img src="mountains_behind.png" id="mountains_behind">
+        <h2 id='text'>Moon Light</h2>
+        <a href='#sec' id='btn'>Explore</a>
+        <img src="mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id='sec'>
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dui libero, varius ut placerat eget, efficitur quis neque. Nunc posuere massa auctor, lacinia orci sed, dignissim elit. Morbi tristique id ligula consectetur porta. Quisque porta bibendum semper. Donec non semper libero, iaculis convallis turpis. Nullam nec justo nec erat fermentum tristique ut a risus. Nam elementum justo quam, sit amet vulputate orci aliquet quis. Curabitur finibus congue nunc, eget dapibus velit fringilla in.<br><br>Maecenas ornare vulputate tempor. Integer ut odio vel dui efficitur fermentum. Curabitur nisi magna, feugiat ac mi id, imperdiet mollis ligula. Vivamus turpis ante, semper sit amet fringilla ut, porttitor sit amet urna. Fusce euismod massa a semper egestas. Sed eu interdum ligula, mattis sollicitudin dolor. Mauris fringilla mauris tortor, vitae elementum quam elementum nec. Nulla facilisi. Mauris leo erat, condimentum nec eros eget, mattis imperdiet metus. Etiam pellentesque orci ut velit ullamcorper faucibus. Sed sed faucibus odio. Donec tortor mauris, consectetur ut pulvinar quis, fringilla et lacus. Nunc maximus, neque eget pellentesque euismod, velit ipsum feugiat nisi, eget rhoncus nibh massa a urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam suscipit felis magna. Vestibulum egestas, ipsum ultrices mattis accumsan, orci nunc placerat purus, eget viverra lectus lacus ac risus.<br><br>Suspendisse elementum sollicitudin risus sed interdum. In non lectus eu sem venenatis fermentum et quis tortor. Aliquam semper neque nisi, a viverra justo fermentum a. Nam dignissim a lectus ultrices malesuada. Quisque lobortis in enim ut vestibulum. Sed tincidunt auctor egestas. Sed pharetra bibendum massa, dictum posuere ex venenatis sit amet. Nunc tincidunt sem quis erat mattis, ac mollis quam auctor. Ut condimentum et nulla vel vehicula.<br><br>Maecenas ornare vulputate tempor. Integer ut odio vel dui efficitur fermentum. Curabitur nisi magna, feugiat ac mi id, imperdiet mollis ligula. Vivamus turpis ante, semper sit amet fringilla ut, porttitor sit amet urna. Fusce euismod massa a semper egestas. Sed eu interdum ligula, mattis sollicitudin dolor. Mauris fringilla mauris tortor, vitae elementum quam elementum nec. Nulla facilisi. Mauris leo erat, condimentum nec eros eget, mattis imperdiet metus. Etiam pellentesque orci ut velit ullamcorper faucibus. Sed sed faucibus odio. Donec tortor mauris, consectetur ut pulvinar quis, fringilla et lacus. Nunc maximus, neque eget pellentesque euismod, velit ipsum feugiat nisi, eget rhoncus nibh massa a urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam suscipit felis magna. Vestibulum egestas, ipsum ultrices mattis accumsan, orci nunc placerat purus, eget viverra lectus lacus ac risus.<br><br>Suspendisse elementum sollicitudin risus sed interdum. In non lectus eu sem venenatis fermentum et quis tortor. Aliquam semper neque nisi, a viverra justo fermentum a. Nam dignissim a lectus ultrices malesuada. Quisque lobortis in enim ut vestibulum. Sed tincidunt auctor egestas. Sed pharetra bibendum massa, dictum posuere ex venenatis sit amet. Nunc tincidunt sem quis erat mattis, ac mollis quam auctor. Ut condimentum et nulla vel vehicula.</p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            stars.style.left = value*0.25 + 'px'
+            moon.style.top = value*1.05 + 'px'
+            mountains_behind.style.top = value*0.5 + 'px'
+            mountains_front.style.top = value*0 + 'px'
+            text.style.marginRight = value*4 + 'px'
+            text.style.marginTop = value*1.5 + 'px'
+            btn.style.marginTop = value*1.5 + 'px'
+            header.style.top = value*0.5 + 'px'
+        })
+    </script>
+</body>
+</html>
